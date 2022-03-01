@@ -21,7 +21,7 @@ while True:
         if event.conference_solution:
             if event.conference_solution.solution_type == 'hangoutsMeet':
                 print(event.summary)
-                s.enterabs(event.start,
+                s.enterabs(float(event.start.timestamp()),
                            1,
                            open_event,
                            kwargs={'code': event.conference_solution.conference_id})
