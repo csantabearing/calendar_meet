@@ -19,9 +19,10 @@ def close_chrome():
 while True:
     for event in calendar:
         if event.conference_solution:
-            if event.conference_solution['solution_type'] == 'hangoutsMeet':
+            if event.conference_solution.solution_type == 'hangoutsMeet':
+                print(event.summary)
                 s.enterabs(event.start,
                            1,
                            open_event,
-                           kwargs={'code': event.conference_solution['conference_id']})
+                           kwargs={'code': event.conference_solution.conference_id})
         s.run(False)
