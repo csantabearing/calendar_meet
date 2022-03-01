@@ -6,8 +6,9 @@ calendar = GoogleCalendar('camilo@bearing.ai')
 
 
 def open_event(code):
-    os.system("echo 'on 0' | cec-client -s -d 1")
-    webbrowser.open(f'meet.google.com/{code}')
+    #os.system("echo 'on 0' | cec-client -s -d 1")
+    #webbrowser.open(f'meet.google.com/{code}')
+    print(code)
 
 
 def close_chrome():
