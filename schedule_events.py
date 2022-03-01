@@ -11,7 +11,7 @@ def open_event(code):
     print(code)
 
 
-def close_chrome():
+def close_event():
     os.system("echo 'standby 0' | cec-client -s -d 1")
     os.system('pkill -o chromium-browser')
 
@@ -25,4 +25,5 @@ while True:
                            1,
                            open_event,
                            kwargs={'code': event.conference_solution.conference_id})
+                s.enterabs(float(event.end.timestamp()), 1, close_event)
         s.run(False)
